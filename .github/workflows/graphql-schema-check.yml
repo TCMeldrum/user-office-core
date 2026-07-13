@@ -16,6 +16,6 @@ jobs:
 
       - uses: graphql-hive/graphql-inspector@master
         with:
-          schema: 'develop:schema.graphql'
+          schema: 'develop:apps/backend/schema.gql'
           # annotations: false
 
