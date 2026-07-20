@@ -1682,7 +1682,7 @@ type Query {
   checkEmailExist(email: String!): Boolean
   checkExternalToken(token: String!): ExternalTokenResult!
   checkToken(token: String!): TokenResult!
-  countries: [Entry!]
+  countriesBREAKINGCHNAGE: [Entry!]
   dataAccessUsers(proposalPk: Int!): [BasicUserDetails!]!
   emailTemplate(emailTemplateId: Int!): EmailTemplate
   emailTemplates(filter: EmailTemplatesFilter): EmailTemplatesQueryResult
