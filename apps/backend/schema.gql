@@ -195,6 +195,7 @@ input CancelVisitRegistrationInput {
 
 input ChangeProposalsStatusInput {
   proposalPks: [Int!]!
+  statusActionsWorkflowConnectionId: Int
   workflowStatusId: Int!
 }
 
@@ -400,6 +401,7 @@ type DynamicMultipleChoiceConfig {
   small_label: String!
   tooltip: String!
   url: String!
+  useBaseDomain: Boolean!
   variant: String!
 }
 
@@ -1366,7 +1368,7 @@ enum NumberValueConstraint {
 }
 
 type Page {
-  BIGBREAKINGCHANGEcontent: String
+  content: String
   id: Int!
 }
 
@@ -1662,6 +1664,7 @@ type QueriesMutationsAndServices {
 }
 
 type Query {
+  ServerConfig: ServerConfig!
   accessTokenAndPermissions(accessTokenId: String!): PermissionsWithAccessToken
   activeTemplateId(templateGroupId: TemplateGroupId!): Int
   allAccessTokensAndPermissions: [PermissionsWithAccessToken!]
@@ -2058,6 +2061,10 @@ type SelectionFromOptionsConfig {
   small_label: String!
   tooltip: String!
   variant: String!
+}
+
+type ServerConfig {
+  baseURL: String!
 }
 
 input SetCoProposerInvitesInput {
