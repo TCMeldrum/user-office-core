@@ -1,6 +1,8 @@
 name: Graphql Schema Check
  
-on: [push]
+on:
+  pull_request:
+    branches: [develop]
  
 jobs:
   test:
@@ -16,7 +18,7 @@ jobs:
 
       - uses: graphql-hive/graphql-inspector@master
         with:
-          schema: 'develop:schema.graphql'
+          schema: 'develop:apps/backend/schema.graphql'
           annotations: false
           approve-label: breaking:change
 
